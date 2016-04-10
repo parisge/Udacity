@@ -1,29 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Airline Performance, 2003-2016</title>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
-    
-
-    <style>
-      h2 {
-        color: black;
-        text-align: center;
-      }
-    </style>
-    <script type="text/javascript">
-
-
-
-      format = d3.time.format("%Y");
-      function draw(data) {
-
-
-
-        'use strict';
+d3.csv(".\\data\\data.csv", function(d) {
+  var format = d3.time.format("%Y");
+  	return {
+  		  'year': format.parse(d.year),
+        'carrier_name': d.carrier_name,
+        'on_time': +d.on_time,
+        'arrivals': +d.arrivals,
+        'percent_delays': +d.percent_car_delays,
+        'average_delays': +d.av_car_delay
+  };
+}, function(data) {
+		    'use strict';
 
         var margin = 80,
               width = 880 - margin,
@@ -78,7 +64,7 @@
           return minimum;
         })(data, 'on_time');
         var minY = Math.round(minOnTimeValue*10)/10,
-            maxY = 0.9;
+            maxY = 0.95;
 
 
         //var svg = dimple.newSvg('#content', 960, 640);
@@ -97,7 +83,7 @@
         addSeries('carrier_name', Chart1);
         //Chart1.addSeries('carrier_name', dimple.plot.line);
         //Chart1.addSeries('carrier_name', dimple.plot.scatter);
-        Chart1.addLegend(width*0.65, 60, width*0.25, 80, 'right');
+        var legend = Chart1.addLegend(width*0.80, 80, width*0.25, 80, 'right');
         addText(svg1, Chart1, "Average Percent Arrivals on Time");
 
         Chart1.draw();
@@ -115,7 +101,7 @@
         addSeries('carrier_name', Chart2);
         //Chart2.addSeries('carrier_name', dimple.plot.line);
         //Chart2.addSeries('carrier_name', dimple.plot.scatter);
-        Chart2.addLegend(width*0.65, 60, width*0.25, 80, 'right');
+        var legend = Chart2.addLegend(width*0.80, 80, width*0.25, 80, 'right');
         addText(svg2, Chart2, "Percent of Delays attributed to Carrier");
 
         Chart2.draw();
@@ -135,38 +121,36 @@
         addSeries('carrier_name', Chart3);
         //Chart3.addSeries('carrier_name', dimple.plot.line);
         //Chart3.addSeries('carrier_name', dimple.plot.scatter);
-        Chart3.addLegend(width*0.65, 60, width*0.25, 80, 'right');
+        var legend = Chart3.addLegend(width*0.80, 80, width*0.25, 80, 'right');
         addText(svg3, Chart3, "Average Time attributed to Carriers");
 
         Chart3.draw();
-      };
-    </script>
-  </head>
-<body>
-  <div class="container">
-    <div class="row">
-      <section id="content" class="col-md-12"></section>
-    </div>
-  </div>
+
+              // handle mouse events on gridlines
+        y.gridlineShapes.selectAll('line')
+          .style('opacity', 0.25)
+          .on('mouseover', function(e) {
+            d3.select(this)
+              .style('opacity', 1);
+          }).on('mouseleave', function(e) {
+            d3.select(this)
+              .style('opacity', 0.25);
+          });
+
+        // handle mouse events on paths
+        d3.selectAll('path')
+          .style('opacity', 0.25)
+          .on('mouseover', function(e) {
+            d3.select(this)
+              .style('stroke-width', '8px')
+              .style('opacity', 1)
+              .attr('z-index', '1');
+        }).on('mouseleave', function(e) {
+            d3.select(this)
+              .style('stroke-width', '2px')
+              .style('opacity', 0.25)
+              .attr('z-index', '0');
 
 
-  <script type="text/javascript">
-    /*
-     * Use D3 to load CSV file and use `draw` callback
-     */
-    d3.csv("data/data.csv", function(d) {
-      return {
-        year: format.parse(d.year),
-        carrier_name: d.carrier_name,
-        on_time: +d.on_time,
-        arrivals: +d.arrivals,
-        percent_delays: +d.percent_car_delays,
-        average_delays: +d.av_car_delay
-      };
-    }, function(error, data) {
-      // console.log(error);
-      draw(data);
-    });
-  </script>
-</body>
-</html>
+}
+);

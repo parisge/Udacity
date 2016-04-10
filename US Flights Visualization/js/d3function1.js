@@ -83,7 +83,7 @@ d3.csv(".\\data\\data.csv", function(d) {
         addSeries('carrier_name', Chart1);
         //Chart1.addSeries('carrier_name', dimple.plot.line);
         //Chart1.addSeries('carrier_name', dimple.plot.scatter);
-        Chart1.addLegend(width*0.65, 60, width*0.25, 80, 'right');
+        var legend = Chart1.addLegend(width*0.80, 80, width*0.25, 80, 'right');
         addText(svg1, Chart1, "Average Percent Arrivals on Time");
 
         Chart1.draw();
@@ -101,7 +101,7 @@ d3.csv(".\\data\\data.csv", function(d) {
         addSeries('carrier_name', Chart2);
         //Chart2.addSeries('carrier_name', dimple.plot.line);
         //Chart2.addSeries('carrier_name', dimple.plot.scatter);
-        Chart2.addLegend(width*0.65, 60, width*0.25, 80, 'right');
+        var legend = Chart2.addLegend(width*0.80, 80, width*0.25, 80, 'right');
         addText(svg2, Chart2, "Percent of Delays attributed to Carrier");
 
         Chart2.draw();
@@ -121,7 +121,7 @@ d3.csv(".\\data\\data.csv", function(d) {
         addSeries('carrier_name', Chart3);
         //Chart3.addSeries('carrier_name', dimple.plot.line);
         //Chart3.addSeries('carrier_name', dimple.plot.scatter);
-        Chart3.addLegend(width*0.65, 60, width*0.25, 80, 'right');
+        var legend = Chart3.addLegend(width*0.80, 80, width*0.25, 80, 'right');
         addText(svg3, Chart3, "Average Time attributed to Carriers");
 
         Chart3.draw();

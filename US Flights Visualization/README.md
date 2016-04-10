@@ -58,7 +58,7 @@ I downloaded the data from [RITA](http://www.transtats.bts.gov/OT_Delay/ot_delay
 ##Initial Analysis
 
 
-![Initial R Plot](https://raw.githubusercontent.com/parisge/Udacity/US Flights Visualization/images/ontime_all.png)
+![Initial R Plot](https://github.com/parisge/Udacity/US Flights Visualization/images/ontime_all.png)
 
 The chart above shows my initial run to display the performance of US domestic flights in terms of their carrier on time arrival. This is such a busy figure with 28 airlines and obviously it too cluttered in delivering analysis. For the next step, I will pick only the top 20% airlines based on the yearly average arrival flights number. 
 
@@ -78,11 +78,11 @@ To show the performance of carriers, I will aggregate data by *year* and *carrie
 
 The charts used will be a combination of catter plot and line chart. Using point, I can precisly display the measure and audience can easily compare. Also, I will add lines to be able to show trends of the performance and for them to see how perfomance of each carrier changed over time. 
 
-![Final R Plot](https://raw.githubusercontent.com/parisge/Udacity/US Flights Visualization/images/carrier_comparisons.png)
+![Final R Plot](https://github.com/parisge/Udacity/US Flights Visualization/images/carrier_comparisons.png)
 
 ### Average Percentage of Arrivals On-Time
 
-![% of Arrivals On-Time](https://raw.githubusercontent.com/parisge/Udacity/US Flights Visualization/images/ontime_carrier.png)
+![% of Arrivals On-Time](https://github.com/parisge/Udacity/US Flights Visualization/images/ontime_carrier.png)
 
 Based on the diagram, we see that the percentage for on-time flights has converged significantly during the years 2011-2012 and 2015. For 2016 we have data only for the first month so they chart results need to be taken with a grain of salt. It is also clear from the chart is that Delta Airlines is outperfomring its competitors in terms of On-Time completed flights, even though it ranked below others before 2011.
 
@@ -90,13 +90,13 @@ Now let's examinte whether it is the carriers mistake the cause of the late flig
 
 ### Average Percentage Delay due to Carrier
 
-![% Delays due to Carrier](https://raw.githubusercontent.com/parisge/Udacity/US Flights Visualization/images/delays_carrier.png)
+![% Delays due to Carrier](https://github.com/parisge/Udacity/US Flights Visualization/images/delays_carrier.png)
 
 As we can see SkyWest a regional airline which partners up with United, American and Delta used to have the highest number of delayed flights due to the carrier, but has significantly dropped after 2007. In the last few years United and South West has seen an increasing number of flights getting delayed due to the carrier. 
 
 ### Average Time Delay due to Carrier
 
-![Time Delay due to Carrier](https://raw.githubusercontent.com/parisge/Udacity/US Flights Visualization/images/timedelay_carrier.png)
+![Time Delay due to Carrier](https://github.com/parisge/Udacity/US Flights Visualization/images/timedelay_carrier.png)
 
 What is very interesting is that the average time of delay attributed to each carrier shows a very different picture than the Percentage of On-Time Arrivals and the Percentage of Delays due to Carrier. Delta Airlines that had on of the best records in terms of Arrivales and lowest in terms of Carrier Delays has on average the highest amount of minutes of delay. The trend on the average number of minutes of delay has been upwards, maybe because the Carriers are engaging in longer distance flights. Similarly SkyWest which saw it's Percentage Delay due to Carrier drop after 2007, it has see its Time Delay increase consistently after 2009. 
 
@@ -105,27 +105,27 @@ What is very interesting is that the average time of delay attributed to each ca
 I showed the charts to couple of my friends and here are the main comments that I got back:
 
 
-#1 - "By looking at the On-Time flight rates chart, there is significant difference between carriers, however, the way you scaled the y axis doesn't really deliever the point! "
+1 - "By looking at the On-Time flight rates chart, there is significant difference between carriers, however, the way you scaled the y axis doesn't really deliever the point! "
 
 The range for percentage of on-time flight is between 70 and 90%. The diagram initially had y axis from (0 to 100%) which made a lot of empty space in the chart and also the difference of perfromance among the carriers were not really visible. I shortened the range from (0,100) to (60,90) so the difference become more obvious. 
 
-#2- "Even though the lines and points are colored differently, I think it would be really nice to highlight or emphasize individual airlines when you select them."
+2- "Even though the lines and points are colored differently, I think it would be really nice to highlight or emphasize individual airlines when you select them."
 
 I added a `mouseover` event for the lines, so it would 'pop' it out and emphasize the path.  This would allow for better understanding of each individual airline's trend from 2003 to 2016.
 
 
-#3- "In the first chart the grid lines that come vertically to the x-axis stop at the 70% level. It would be nice to go all the way down to the x-axis."
+3- "In the first chart the grid lines that come vertically to the x-axis stop at the 70% level. It would be nice to go all the way down to the x-axis."
 
 
-#4- Having the right side of the chart open was nice, in addition to the points being spread apart; it was clear to see who the current champion is. It would be better to have more explanatory titles to the charts."
+4- Having the right side of the chart open was nice, in addition to the points being spread apart; it was clear to see who the current champion is. It would be better to have more explanatory titles to the charts."
 
 I changed the chart title to be more consistent with the data presented.
 
-#5- "In some of the charts the legend gets clustered with the data."
+5- "In some of the charts the legend gets clustered with the data."
 
 I decided to move the legend to the top right, providing close proximity to the more relevant data points near 2014.
 
-#6- "There is not a story behind the graphs. It is more Explpraatory than Explanatory"
+6- "There is not a story behind the graphs. It is more Explpraatory than Explanatory"
 
 In the new version, I focused on Delta Air Lines and how it performs comparing to other carriers. I believe Delta Air Lines is currently one of the best US Domestic Air Lines in terms of delay.
 
