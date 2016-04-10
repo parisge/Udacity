@@ -62,7 +62,7 @@ I downloaded the data from [RITA](http://www.transtats.bts.gov/OT_Delay/ot_delay
 ##Initial Analysis
 
 
-![Initial R Plot](https://github.com/parisge/Udacity/blob/master/US%20Flights%20Visualization/images/ontime_all.png)
+![Initial R Plot](https://github.com/parisge/Udacity/blob/master/US%20Flights%20Visualization/images/onetime_all.png)
 
 The chart above shows my initial run to display the performance of US domestic flights in terms of their carrier on time arrival. This is such a busy figure with 28 airlines and obviously it too cluttered in delivering analysis. For the next step, I will pick only the top 20% airlines based on the yearly average arrival flights number. 
 
