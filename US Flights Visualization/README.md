@@ -94,7 +94,7 @@ Now let's examinte whether it is the carriers mistake the cause of the late flig
 
 ### Average Percentage Delay due to Carrier
 
-![% Delays due to Carrier](https://github.com/parisge/Udacity/US Flights Visualization/images/delays_carrier.png)
+![% Delays due to Carrier](https://github.com/parisge/Udacity/blob/master/US%20Flights%20Visualization/images/delays_carrier.png)
 
 As we can see SkyWest a regional airline which partners up with United, American and Delta used to have the highest number of delayed flights due to the carrier, but has significantly dropped after 2007. In the last few years United and South West has seen an increasing number of flights getting delayed due to the carrier. 
 
