@@ -82,7 +82,7 @@ To show the performance of carriers, I will aggregate data by *year* and *carrie
 
 The charts used will be a combination of catter plot and line chart. Using point, I can precisly display the measure and audience can easily compare. Also, I will add lines to be able to show trends of the performance and for them to see how perfomance of each carrier changed over time. 
 
-![Final R Plot](https://github.com/parisge/Udacity/blob/master/US%20Flights%20Visualization/images/carrier_comparisons.png
+![Final R Plot](https://github.com/parisge/Udacity/blob/master/US%20Flights%20Visualization/images/carrier_comparisons.png)
 
 ### Average Percentage of Arrivals On-Time
 
