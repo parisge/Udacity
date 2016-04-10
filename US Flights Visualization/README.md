@@ -16,6 +16,7 @@ This project visualized the top 20% quartile of the performance for the years 20
 ##	 3rd Qu.:2012   3rd Qu.:10.000   AA     : 12281   American Airlines Inc.      : 12281  
 ##	 Max.   :2016   Max.   :12.000   UA     : 11875   Atlantic Southeast Airlines : 12204  
 ##	                                 (Other):107878   (Other)                     :110765  
+##
 ##	    airport                                              airport_name     arr_flights   
 ##	 LAX    :  2141   Los Angeles, CA: Los Angeles International   :  2141   Min.   :    1  
 ##	 LAS    :  2128   Las Vegas, NV: McCarran International        :  2128   1st Qu.:   62  
@@ -23,7 +24,8 @@ This project visualized the top 20% quartile of the performance for the years 20
 ##	 DEN    :  2063   Denver, CO: Denver International             :  2063   Mean   :  399  
 ##	 SAN    :  2057   San Diego, CA: San Diego International       :  2057   3rd Qu.:  289  
 ##	 DTW    :  2050   Detroit, MI: Detroit Metro Wayne County      :  2050   Max.   :21648  
-##	 (Other):196372   (Other)                                      :196372   NA's   :312    
+##	 (Other):196372   (Other)                                      :196372   NA's   :312  
+##
 ##	   arr_del15         carrier_ct       X.weather_ct         nas_ct         security_ct    
 ##	 Min.   :   0.00   Min.   :   0.00   Min.   :  0.000   Min.   :  -0.01   Min.   : 0.000  
 ##	 1st Qu.:  12.00   1st Qu.:   4.02   1st Qu.:  0.000   1st Qu.:   2.33   1st Qu.: 0.000  
@@ -31,7 +33,8 @@ This project visualized the top 20% quartile of the performance for the years 20
 ##	 Mean   :  79.83   Mean   :  22.37   Mean   :  2.916   Mean   :  27.13   Mean   : 0.194  
 ##	 3rd Qu.:  62.00   3rd Qu.:  21.73   3rd Qu.:  2.330   3rd Qu.:  17.85   3rd Qu.: 0.000  
 ##	 Max.   :6377.00   Max.   :1792.07   Max.   :717.940   Max.   :4091.27   Max.   :80.560  
-##	 NA's   :352       NA's   :312       NA's   :312       NA's   :312       NA's   :312     
+##	 NA's   :352       NA's   :312       NA's   :312       NA's   :312       NA's   :312   
+##
 ##	 late_aircraft_ct  arr_cancelled       arr_diverted       X.arr_delay     X.carrier_delay 
 ##	 Min.   :   0.00   Min.   :   0.000   Min.   :  0.0000   Min.   :     0   Min.   :     0  
 ##	 1st Qu.:   2.00   1st Qu.:   0.000   1st Qu.:  0.0000   1st Qu.:   545   1st Qu.:   189  
@@ -39,7 +42,8 @@ This project visualized the top 20% quartile of the performance for the years 20
 ##	 Mean   :  27.20   Mean   :   6.983   Mean   :  0.9013   Mean   :  4381   Mean   :  1268  
 ##	 3rd Qu.:  18.97   3rd Qu.:   5.000   3rd Qu.:  1.0000   3rd Qu.:  3298   3rd Qu.:  1142  
 ##	 Max.   :1885.47   Max.   :1969.000   Max.   :256.0000   Max.   :433687   Max.   :134693  
-##	 NA's   :312       NA's   :312        NA's   :312        NA's   :312      NA's   :312     
+##	 NA's   :312       NA's   :312        NA's   :312        NA's   :312      NA's   :312  
+##
 ##	 weather_delay     nas_delay      security_delay     late_aircraft_delay    X          
 ##	 Min.   :    0   Min.   :   -19   Min.   :   0.000   Min.   :     0      Mode:logical  
 ##	 1st Qu.:    0   1st Qu.:    80   1st Qu.:   0.000   1st Qu.:   101      NA's:208905   
@@ -58,7 +62,7 @@ I downloaded the data from [RITA](http://www.transtats.bts.gov/OT_Delay/ot_delay
 ##Initial Analysis
 
 
-![Initial R Plot](https://github.com/parisge/Udacity/US Flights Visualization/images/ontime_all.png)
+![Initial R Plot](https://github.com/parisge/Udacity/blob/master/US%20Flights%20Visualization/images/ontime_all.png)
 
 The chart above shows my initial run to display the performance of US domestic flights in terms of their carrier on time arrival. This is such a busy figure with 28 airlines and obviously it too cluttered in delivering analysis. For the next step, I will pick only the top 20% airlines based on the yearly average arrival flights number. 
 
@@ -78,11 +82,11 @@ To show the performance of carriers, I will aggregate data by *year* and *carrie
 
 The charts used will be a combination of catter plot and line chart. Using point, I can precisly display the measure and audience can easily compare. Also, I will add lines to be able to show trends of the performance and for them to see how perfomance of each carrier changed over time. 
 
-![Final R Plot](https://github.com/parisge/Udacity/US Flights Visualization/images/carrier_comparisons.png)
+![Final R Plot](https://github.com/parisge/Udacity/blob/master/US%20Flights%20Visualization/images/carrier_comparisons.png
 
 ### Average Percentage of Arrivals On-Time
 
-![% of Arrivals On-Time](https://github.com/parisge/Udacity/US Flights Visualization/images/ontime_carrier.png)
+![% of Arrivals On-Time](https://github.com/parisge/Udacity/blob/master/US%20Flights%20Visualization/images/ontime_carrier.png)
 
 Based on the diagram, we see that the percentage for on-time flights has converged significantly during the years 2011-2012 and 2015. For 2016 we have data only for the first month so they chart results need to be taken with a grain of salt. It is also clear from the chart is that Delta Airlines is outperfomring its competitors in terms of On-Time completed flights, even though it ranked below others before 2011.
 
@@ -96,7 +100,7 @@ As we can see SkyWest a regional airline which partners up with United, American
 
 ### Average Time Delay due to Carrier
 
-![Time Delay due to Carrier](https://github.com/parisge/Udacity/US Flights Visualization/images/timedelay_carrier.png)
+![Time Delay due to Carrier](https://github.com/parisge/Udacity/blob/master/US%20Flights%20Visualization/images/timedelay_carrier.png)
 
 What is very interesting is that the average time of delay attributed to each carrier shows a very different picture than the Percentage of On-Time Arrivals and the Percentage of Delays due to Carrier. Delta Airlines that had on of the best records in terms of Arrivales and lowest in terms of Carrier Delays has on average the highest amount of minutes of delay. The trend on the average number of minutes of delay has been upwards, maybe because the Carriers are engaging in longer distance flights. Similarly SkyWest which saw it's Percentage Delay due to Carrier drop after 2007, it has see its Time Delay increase consistently after 2009. 
 
