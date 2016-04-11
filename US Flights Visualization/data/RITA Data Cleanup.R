@@ -19,7 +19,7 @@ str(data)
 summary(data)
 head(data)
       
-data$date <- as.Date(paste(df$year, df$X.month, 1, sep='-'), format="%Y-%m-%d")
+data$date <- as.Date(paste(data$year, data$X.month, 1, sep='-'), format="%Y-%m-%d")
 summary(data$date)
       
 nrow(table(data$carrier))

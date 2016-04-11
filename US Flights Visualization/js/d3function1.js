@@ -46,12 +46,12 @@ d3.csv(".\\data\\data.csv", function(d) {
           function addSeries(series, chart) {
             chart.addSeries("carrier_name", dimple.plot.line);
             chart.addSeries("carrier_name", dimple.plot.scatter);
-            chart.assignColor("SkyWest Airlines Inc.", "yellow");
-            chart.assignColor("Delta Air Lines Inc.", "red");
-            chart.assignColor("Southwest Airlines Co.", "purple");
-            chart.assignColor("United Air Lines Inc.", "lightblue");
-            chart.assignColor("American Eagle Airlines Inc.", "green");
-            chart.assignColor("American Airlines Inc.", "darkblue");
+            chart.assignColor("SkyWest Airlines Inc.", "#c7c7c7");
+            chart.assignColor("Delta Air Lines Inc.", "#d6616b");
+            chart.assignColor("Southwest Airlines Co.", "#756bb1");
+            chart.assignColor("United Air Lines Inc.", "#3182bd");
+            chart.assignColor("American Eagle Airlines Inc.", "#cedb9c");
+            chart.assignColor("American Airlines Inc.", "#31a354");
           };
 
         var minOnTimeValue = (function(data, field) {
@@ -63,9 +63,9 @@ d3.csv(".\\data\\data.csv", function(d) {
           });
           return minimum;
         })(data, 'on_time');
-        var minY = Math.round(minOnTimeValue*10)/10,
+        var minY = 0.65,
             maxY = 1;
-
+            //
 
         //var svg = dimple.newSvg('#content', 960, 640);
         var svg1 = createSVG()
@@ -83,7 +83,7 @@ d3.csv(".\\data\\data.csv", function(d) {
         addSeries('carrier_name', Chart1);
         //Chart1.addSeries('carrier_name', dimple.plot.line);
         //Chart1.addSeries('carrier_name', dimple.plot.scatter);
-        var legend = Chart1.addLegend(width*0.80, 80, width*0.25, 80, 'right');
+        var legend = Chart1.addLegend(width*0.75, 80, width*0.25, 80, 'right');
         addText(svg1, Chart1, "Average Percent Arrivals on Time");
 
         Chart1.draw();
@@ -101,7 +101,7 @@ d3.csv(".\\data\\data.csv", function(d) {
         addSeries('carrier_name', Chart2);
         //Chart2.addSeries('carrier_name', dimple.plot.line);
         //Chart2.addSeries('carrier_name', dimple.plot.scatter);
-        var legend = Chart2.addLegend(width*0.80, 80, width*0.25, 80, 'right');
+        var legend = Chart2.addLegend(width*0.75, 80, width*0.25, 80, 'right');
         addText(svg2, Chart2, "Percent of Delays attributed to Carrier");
 
         Chart2.draw();
@@ -121,10 +121,38 @@ d3.csv(".\\data\\data.csv", function(d) {
         addSeries('carrier_name', Chart3);
         //Chart3.addSeries('carrier_name', dimple.plot.line);
         //Chart3.addSeries('carrier_name', dimple.plot.scatter);
-        var legend = Chart3.addLegend(width*0.80, 80, width*0.25, 80, 'right');
+        var legend = Chart3.addLegend(width*0.75, 80, width*0.25, 80, 'right');
         addText(svg3, Chart3, "Average Time attributed to Carriers");
 
         Chart3.draw();
+
+
+        // handle mouse events on gridlines
+        y.gridlineShapes.selectAll('line')
+          .style('opacity', 0.25)
+          .on('mouseover', function(e) {
+            d3.select(this)
+              .style('opacity', 1);
+          }).on('mouseleave', function(e) {
+            d3.select(this)
+              .style('opacity', 0.25);
+          });
+
+        // handle mouse events on paths
+        d3.selectAll('path')
+          .style('opacity', 0.25)
+          .on('mouseover', function(e) {
+            d3.select(this)
+              .style('stroke-width', '8px')
+              .style('opacity', 1)
+              .attr('z-index', '1');
+        }).on('mouseleave', function(e) {
+            d3.select(this)
+              .style('stroke-width', '2px')
+              .style('opacity', 0.25)
+              .attr('z-index', '0');
+
+        });
 
 
 }

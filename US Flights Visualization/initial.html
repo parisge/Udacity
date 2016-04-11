@@ -68,17 +68,9 @@
             chart.assignColor("American Airlines Inc.", "darkblue");
           };
 
-        var minOnTimeValue = (function(data, field) {
-          var minimum = 1;
-          data.forEach(function(record) {
-            if (record[field] < minimum) {
-              minimum = record[field];
-            }
-          });
-          return minimum;
-        })(data, 'on_time');
-        var minY = Math.round(minOnTimeValue*10)/10,
-            maxY = 0.9;
+        
+        var minY = 0,
+            maxY = 1;
 
 
         //var svg = dimple.newSvg('#content', 960, 640);

@@ -111,47 +111,40 @@ I showed the charts to couple of my friends and here are the main comments that 
 
 1 - "By looking at the On-Time flight rates chart, there is significant difference between carriers, however, the way you scaled the y axis doesn't really deliever the point! "
 
-The range for percentage of on-time flight is between 70 and 90%. The diagram initially had y axis from (0 to 100%) which made a lot of empty space in the chart and also the difference of perfromance among the carriers were not really visible. I shortened the range from (0,100) to (60,90) so the difference become more obvious. 
+The range for percentage of on-time flight is between 65 and 100%. The diagram initially had y axis from (0 to 100%) which made a lot of empty space in the chart and also the difference of perfromance among the carriers were not really visible. I shortened the range from (0,100) to (65,100) so the difference become more obvious. 
 
 2- "Even though the lines and points are colored differently, I think it would be really nice to highlight or emphasize individual airlines when you select them."
 
 I added a `mouseover` event for the lines, so it would 'pop' it out and emphasize the path.  This would allow for better understanding of each individual airline's trend from 2003 to 2016.
 
+3- "In the OnTime arrivals the dotted grid lines that come vertically to the x-axis stop at the 70% level. It would be nice to go all the way down to the x-axis."
 
-3- "In the first chart the grid lines that come vertically to the x-axis stop at the 70% level. It would be nice to go all the way down to the x-axis."
+I manually overrode the minimum Y-axis interval for the OnTime arrivals chart to be at 65%. In this way the 
 
+4- "Using a bit lighter colors for the charts would make it more plesant to the eye. Having the right side of the chart open was nice, in addition to the points being spread apart. "
 
-4- Having the right side of the chart open was nice, in addition to the points being spread apart; it was clear to see who the current champion is. It would be better to have more explanatory titles to the charts."
+I re-adjusted the colors of the lines and points to make them less intense and nicer in the eye.
 
-I changed the chart title to be more consistent with the data presented.
+5- "In some of the charts the legend gets clustered with the data. Try to put it all the way in the top-right side of the charts"
 
-5- "In some of the charts the legend gets clustered with the data."
+I decided to move the legend to the top right, in this way avoiding any clustering with the data.
 
-I decided to move the legend to the top right, providing close proximity to the more relevant data points near 2014.
+6- "The relationship of the graphs seems very interesting. I can clearly see who is the champion and focus comparatively on how each airline has perfomed. "
 
-6- "There is not a story behind the graphs. It is more Explpraatory than Explanatory"
+By highlighting every airline and presenting the data in the order I did I think it made it faily simple to see the relationships among the different airlines. 
 
-In the new version, I focused on Delta Air Lines and how it performs comparing to other carriers. I believe Delta Air Lines is currently one of the best US Domestic Air Lines in terms of delay.
-
-
-Following the feedback from the interviews, I implemented the following changes:
-
-- I added a `mouseover` event for the lines, so it would 'pop' it out and emphasize the path.  This would allow for better understanding of each individual airline's trend from 2003 to 2014.
-- I changed the chart title to be more consistent with the data presented.
-- I subdued and muted the grid lines.
-- I polished the tooltip variable names to be more natural.
-
-I chose not to include the arrival data and raw numbers.  I didn't think that it was the focus of the chart, or had any impact on the understanding of airline on-time arrival rates.
 
 Below is the final rendition of the data visualization:
 
-![Final Chart]()
+![Final Chart](https://github.com/parisge/Udacity/blob/master/US%20Flights%20Visualization/images/final_chart.png)
 
 ### Resources
 
-- [dimple.js Documentation](http://dimplejs.org/)
 - [Data Visualization and D3.js (Udacity)](https://www.udacity.com/course/viewer#!/c-ud507-nd)
-- [D3 multi-series line chart with tooltips and legend](http://bl.ocks.org/Matthew-Weber/5645518)
+- [dimple.js Documentation](http://dimplejs.org/)
+- [Scott Murray D3 Tutorials](http://alignedleft.com/tutorials/d3)
+- [Mike Bostock D3 Selections](https://github.com/mbostock/d3/wiki/Selections)
+- [Stator Tutoria Mouse Events](http://www.stator-afm.com/tutorial/d3-js-mouse-events/)
 - Various [Stack Overflow](http://stackoverflow.com/search?q=dimple.js) posts
 
 ### Data
