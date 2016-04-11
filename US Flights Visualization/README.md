@@ -3,7 +3,7 @@ by Paris Georgoudis
 
 ### Summary
 
-This project visualized the top 20% quartile of the performance for the years 2003-2016 for the largest U.S. domestic airlines' performance from 2003-2016.  It depicts 3 charts the percentage of On-Time arrivals, the percentage of Delays (over 15 mins) due to Carrier and the average minute of Delays (over 15 mins) per Carrer. All data was collected from RITA.
+This project visualized the top 20% quartile of the performance for the years 2003-2016 for the largest U.S. domestic airlines' performance from 2003-2016.  It depicts 3 charts the percentage of On-Time arrivals, the percentage of Delays due to Carrier and the average minute of Delays per Carrier. All data was collected from RITA.
 
 ### Summary of data
 
@@ -134,7 +134,7 @@ I decided to move the legend to the top right, in this way avoiding any clusteri
 By highlighting every airline and presenting the data in the order I did I think it made it faily simple to see the relationships among the different airlines. 
 
 
-Below is the final rendition of the data visualization:
+Below is the final view of the data visualization:
 
 ![Final Chart](https://github.com/parisge/Udacity/blob/master/US%20Flights%20Visualization/images/final_chart.png)
 
